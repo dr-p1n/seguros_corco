@@ -996,16 +996,16 @@ tbody td:first-child { color: var(--ink); font-weight: 500; }
   z-index: 0;
 }
 
-.ghost-num--top-right  { top: -0.25em; right: -0.1em; }
-.ghost-num--top-left   { top: -0.25em; left: -0.1em; }
+.ghost-num--top-right  { top: 1rem; right: 0; }
+.ghost-num--top-left   { top: 1rem; left: 0; }
 .ghost-num--dark {
   color: rgba(201,169,110,0.06);
 }
 
-/* Services section needs position:relative for ghost nums */
-.services { position: relative; overflow: hidden; }
-.other-services { position: relative; overflow: hidden; }
-.about { position: relative; overflow: hidden; }
+/* Services section needs position:relative for ghost nums — NO overflow:hidden */
+.services { position: relative; }
+.other-services { position: relative; }
+.about { position: relative; }
 
 /* ── Card background numeral ─────────────────────────────────
    Faint large serif number anchored bottom-right of premium cards.
