@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Corco Seguros — Dos generaciones de familia panameña asesorando a familias panameñas. Seguro de Vida, Salud, Auto, Viaje y más." />
+  <meta name="robots" content="index, follow" />
+  <title>Corco Seguros — Protegemos lo que más importa</title>
+
+  <meta property="og:title" content="Corco Seguros — Protegemos lo que más importa" />
+  <meta property="og:description" content="Dos generaciones de familia panameña asesorando a familias panameñas." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_PA" />
+
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════
+     NAV
+══════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" role="navigation" aria-label="Navegación principal">
+    <div class="container nav__inner">
+
+      <a href="#" class="nav__logo" aria-label="Corco Seguros — inicio">
+        <img src="assets/logo-placeholder.svg" alt="Corco Seguros" width="160" height="30" />
+      </a>
+
+      <ul class="nav__links" role="list">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#coberturas">Coberturas</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <a href="https://wa.me/50700000000" class="nav__wa" target="_blank" rel="noopener noreferrer" aria-label="Escríbenos por WhatsApp">
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <button
+          class="nav__hamburger"
+          id="nav-hamburger"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-mobile-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <div class="nav__mobile-menu" id="nav-mobile-menu" role="dialog" aria-label="Menú móvil">
+    <a href="#servicios">Servicios</a>
+    <a href="#otros-servicios">Coberturas</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="hero__layout">
+
+      <!-- Content — left column -->
+      <div class="hero__content">
+        <span class="hero__eyebrow">Correduría de Seguros · Panamá</span>
+
+        <h1 class="hero__headline" id="hero-heading">
+          Corco<br><em>Seguros.</em>
+        </h1>
+
+        <div class="hero__rule" aria-hidden="true"></div>
+
+        <p class="hero__promise">Protegemos lo que más importa.</p>
+
+        <p class="hero__sub">
+          Dos generaciones de familia panameña asesorando a familias panameñas.
+          Porque el seguro no es un trámite — es una promesa.
+        </p>
+
+        <div class="hero__ctas">
+          <a href="#contacto" class="btn btn-gold">Agenda una consulta gratuita</a>
+          <a href="#otros-servicios" class="btn btn-ghost">Cotizar cobertura directa</a>
+        </div>
+      </div>
+
+      <!-- Decorative geometric element — right column -->
+      <div class="hero__deco" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer ring -->
+          <circle cx="200" cy="200" r="175" stroke="rgba(201,169,110,0.12)" stroke-width="0.75"/>
+          <!-- Mid ring -->
+          <circle cx="200" cy="200" r="122" stroke="rgba(201,169,110,0.08)" stroke-width="0.75"/>
+          <!-- Inner ring -->
+          <circle cx="200" cy="200" r="68" stroke="rgba(201,169,110,0.13)" stroke-width="0.75"/>
+          <!-- Crosshair lines -->
+          <line x1="24" y1="200" x2="376" y2="200" stroke="rgba(201,169,110,0.06)" stroke-width="0.75"/>
+          <line x1="200" y1="24" x2="200" y2="376" stroke="rgba(201,169,110,0.06)" stroke-width="0.75"/>
+          <!-- Diagonal lines -->
+          <line x1="76" y1="76" x2="324" y2="324" stroke="rgba(201,169,110,0.04)" stroke-width="0.75"/>
+          <line x1="324" y1="76" x2="76" y2="324" stroke="rgba(201,169,110,0.04)" stroke-width="0.75"/>
+          <!-- Cardinal tick marks -->
+          <line x1="200" y1="22" x2="200" y2="38" stroke="rgba(201,169,110,0.35)" stroke-width="1"/>
+          <line x1="378" y1="200" x2="362" y2="200" stroke="rgba(201,169,110,0.35)" stroke-width="1"/>
+          <line x1="200" y1="378" x2="200" y2="362" stroke="rgba(201,169,110,0.35)" stroke-width="1"/>
+          <line x1="22" y1="200" x2="38" y2="200" stroke="rgba(201,169,110,0.35)" stroke-width="1"/>
+          <!-- Monogram -->
+          <text x="200" y="248" text-anchor="middle" font-family="Georgia, serif" font-size="158" fill="rgba(201,169,110,0.055)" font-weight="700">C</text>
+          <!-- Center dot -->
+          <circle cx="200" cy="200" r="3.5" fill="rgba(201,169,110,0.55)"/>
+          <circle cx="200" cy="200" r="1.5" fill="rgba(201,169,110,0.9)"/>
+          <!-- Offset accent arc — asymmetric detail -->
+          <path d="M 340 90 A 170 170 0 0 1 375 190" stroke="rgba(201,169,110,0.2)" stroke-width="1" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Diamond separator -->
+<div class="sep" aria-hidden="true">
+  <span class="sep__line"></span>
+  <span class="sep__diamond"></span>
+  <span class="sep__line sep__line--right"></span>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     COBERTURA CONSULTIVA
+══════════════════════════════════════════════════════════ -->
+<section id="servicios" class="services" aria-labelledby="services-heading">
+  <!-- Ghost numeral -->
+  <span class="ghost-num ghost-num--top-right" aria-hidden="true">01</span>
+
+  <div class="container">
+    <div class="services__layout">
+
+      <!-- Sticky intro sidebar -->
+      <aside class="services__intro">
+        <div class="eyebrow-group">
+          <span class="eyebrow-line" aria-hidden="true"></span>
+          <span class="eyebrow">Lo que cubrimos</span>
+        </div>
+        <h2 class="services__title" id="services-heading">Cobertura<br>Consultiva</h2>
+        <p class="services__desc">Asesoría personalizada en los seguros que más impactan tu vida y la de tu familia.</p>
+      </aside>
+
+      <!-- Cards -->
+      <div class="services__cards">
+
+        <!-- Card 1: Seguro de Vida -->
+        <div class="service-card">
+          <span class="card-bg-num" aria-hidden="true">01</span>
+          <div class="service-card__label">
+            <span class="service-card__num">01</span>
+            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+            </svg>
+          </div>
+          <h3 class="service-card__title">Seguro de Vida</h3>
+          <p class="service-card__body">La tranquilidad de saber que los tuyos están protegidos sin importar lo que pase.</p>
+          <a
+            href="https://wa.me/50700000000?text=Hola%2C%20me%20interesa%20el%20Seguro%20de%20Vida."
+            class="btn btn-wa"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Hablar con un asesor
+          </a>
+        </div>
+
+        <!-- Card 2: Seguro de Salud -->
+        <div class="service-card">
+          <span class="card-bg-num" aria-hidden="true">02</span>
+          <div class="service-card__label">
+            <span class="service-card__num">02</span>
+            <svg class="service-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="service-card__title">Seguro de Salud</h3>
+          <p class="service-card__body">Acceso a la atención que mereces, sin sorpresas al momento de necesitarla.</p>
+          <a
+            href="https://wa.me/50700000000?text=Hola%2C%20me%20interesa%20el%20Seguro%20de%20Salud."
+            class="btn btn-wa"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Hablar con un asesor
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     OTROS SERVICIOS
+══════════════════════════════════════════════════════════ -->
+<section id="otros-servicios" class="other-services" aria-labelledby="otros-heading">
+  <!-- Ghost numeral -->
+  <span class="ghost-num ghost-num--top-right" aria-hidden="true">02</span>
+
+  <div class="container">
+    <div class="other-services__header">
+      <div class="eyebrow-group">
+        <span class="eyebrow-line" aria-hidden="true"></span>
+        <span class="eyebrow">Seguros de Daños</span>
+      </div>
+      <h2 class="other-services__title" id="otros-heading">También te cubrimos en lo cotidiano.</h2>
+    </div>
+    <p class="other-services__sub">Seguros directos, sin complicaciones. Para el carro, el hogar, el viaje, y lo que valoras.</p>
+
+    <div class="other-grid">
+
+      <div class="other-card">
+        <h3 class="other-card__title">Seguro de Auto</h3>
+        <p class="other-card__body">Cobertura básica o todo riesgo. Tú decides el nivel de protección.</p>
+        <a href="https://wa.me/50700000000?text=Hola%2C%20me%20interesa%20el%20Seguro%20de%20Auto." class="btn btn-wa-subtle" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
+      </div>
+
+      <div class="other-card">
+        <h3 class="other-card__title">Seguro de Incendio</h3>
+        <p class="other-card__body">Protege tu hogar o negocio ante pérdidas estructurales.</p>
+        <a href="https://wa.me/50700000000?text=Hola%2C%20me%20interesa%20el%20Seguro%20de%20Incendio." class="btn btn-wa-subtle" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
+      </div>
+
+      <div class="other-card">
+        <h3 class="other-card__title">Seguro de Viaje</h3>
+        <p class="other-card__body">Emergencias médicas, cancelaciones y equipaje cubiertos donde estés.</p>
+        <a href="https://wa.me/50700000000?text=Hola%2C%20me%20interesa%20el%20Seguro%20de%20Viaje." class="btn btn-wa-subtle" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
+      </div>
+
+      <div class="other-card">
+        <h3 class="other-card__title">Seguro de Contenido</h3>
+        <p class="other-card__body">Lo que está dentro también importa. Electrodomésticos, mobiliario, equipos.</p>
+        <a href="https://wa.me/50700000000?text=Hola%2C%20me%20interesa%20el%20Seguro%20de%20Contenido." class="btn btn-wa-subtle" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     COMPARATIVE TABLE
+     TABLE PLACEHOLDER v1 — content TBD
+══════════════════════════════════════════════════════════ -->
+<section id="coberturas" class="coverage-table" aria-labelledby="coberturas-heading">
+  <div class="container">
+
+    <div class="coverage-table__header">
+      <span class="eyebrow">Comparativo</span>
+      <h2 class="coverage-table__title" id="coberturas-heading">¿Qué cobertura es para ti?</h2>
+      <p class="coverage-table__sub">Compara las opciones y elige la que mejor se adapta a tu situación.</p>
+    </div>
+
+    <!-- TABLE PLACEHOLDER v1 — content TBD -->
+    <div class="coverage-table__wrap">
+      <table role="table" aria-label="Tabla comparativa de coberturas">
+        <thead>
+          <tr>
+            <th scope="col">Característica</th>
+            <th scope="col">Renovación</th>
+            <th scope="col">Viaje</th>
+            <th scope="col">Catastrófico</th>
+            <th scope="col">Maternidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cobertura médica básica</td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+          </tr>
+          <tr>
+            <td>Hospitalización</td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+          </tr>
+          <tr>
+            <td>Consultas especializadas</td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+          </tr>
+          <tr>
+            <td>Emergencias en el exterior</td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+          </tr>
+          <tr>
+            <td>Cobertura catastrófica</td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+          </tr>
+          <tr>
+            <td>Atención obstétrica y parto</td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="dash"  aria-label="No incluido">—</span></td>
+            <td><span class="check" aria-label="Incluido">✓</span></td>
+          </tr>
+          <tr class="table-cta-row">
+            <td colspan="5">
+              <a
+                href="https://wa.me/50700000000?text=Hola%2C%20quisiera%20saber%20qu%C3%A9%20cobertura%20es%20la%20indicada%20para%20m%C3%AD."
+                class="btn btn-wa"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Escríbenos por WhatsApp
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- END TABLE PLACEHOLDER v1 -->
+
+  </div>
+</section>
+
+<!-- Diamond separator -->
+<div class="sep" aria-hidden="true" style="background:var(--cream-50)">
+  <span class="sep__line"></span>
+  <span class="sep__diamond"></span>
+  <span class="sep__line sep__line--right"></span>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     LEAD INTAKE FORM / CONTACT
+══════════════════════════════════════════════════════════ -->
+<section id="contacto" class="contact" aria-labelledby="contacto-heading">
+
+  <!-- Ambient arc — top-right corner decoration -->
+  <div class="contact__ambient" aria-hidden="true">
+    <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="320" cy="0" r="260" stroke="rgba(201,169,110,0.08)" stroke-width="0.75"/>
+      <circle cx="320" cy="0" r="180" stroke="rgba(201,169,110,0.06)" stroke-width="0.75"/>
+      <circle cx="320" cy="0" r="100" stroke="rgba(201,169,110,0.1)" stroke-width="0.75"/>
+      <line x1="60" y1="0" x2="320" y2="260" stroke="rgba(201,169,110,0.04)" stroke-width="0.75"/>
+      <line x1="0" y1="80" x2="320" y2="80" stroke="rgba(201,169,110,0.04)" stroke-width="0.75"/>
+    </svg>
+  </div>
+
+  <div class="container">
+    <div class="contact__layout">
+
+      <!-- Left: info + lead magnet -->
+      <div class="contact__info">
+        <span class="eyebrow">Contacto</span>
+        <h2 class="contact__title" id="contacto-heading">Hablemos.</h2>
+        <p class="contact__sub">Cuéntanos qué necesitas y te respondemos directamente — sin bots, sin esperas.</p>
+
+        <!-- LEAD MAGNET PLACEHOLDER — Phase 2 -->
+        <div class="lead-magnet" aria-label="Próxima guía gratuita">
+          <div class="lead-magnet__inner">
+            <span class="lead-magnet__badge">
+              <svg width="10" height="12" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true">
+                <path d="M8 5V4a3 3 0 10-6 0v1H1a1 1 0 00-1 1v5a1 1 0 001 1h8a1 1 0 001-1V6a1 1 0 00-1-1H8zm-3 4a1 1 0 110-2 1 1 0 010 2zm2-4H3V4a2 2 0 114 0v1z"/>
+              </svg>
+              Próximamente
+            </span>
+            <p class="lead-magnet__title">[GUÍA PLACEHOLDER]</p>
+            <p class="lead-magnet__sub">Algo útil que te enviamos directo a tu WhatsApp.</p>
+          </div>
+        </div>
+        <!-- END LEAD MAGNET PLACEHOLDER — Phase 2 -->
+      </div>
+
+      <!-- Right: form -->
+      <form
+        class="intake-form"
+        id="corco-intake-form"
+        novalidate
+        aria-label="Formulario de contacto"
+      >
+        <div class="form-group">
+          <label for="field-nombre">Nombre completo</label>
+          <input type="text" id="field-nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="field-whatsapp">Número de WhatsApp</label>
+          <input type="tel" id="field-whatsapp" name="whatsapp" placeholder="+507 6000-0000" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="field-email">Correo electrónico</label>
+          <input type="email" id="field-email" name="email" placeholder="tu@correo.com" autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="field-interes">¿Qué te interesa?</label>
+          <select id="field-interes" name="interes">
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="renovar-salud">Renovar mi seguro de salud</option>
+            <option value="viaje">Seguro de viaje</option>
+            <option value="catastrofico">Cobertura catastrófica</option>
+            <option value="maternidad">Maternidad</option>
+            <option value="vida">Seguro de vida</option>
+            <option value="salud-nuevo">Seguro de salud nuevo</option>
+            <option value="no-seguro">No estoy seguro/a todavía</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-gold">Quiero recibir la guía</button>
+        <!-- TODO Phase 2: POST to Apps Script webhook on submit -->
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERITAGE / ABOUT
+══════════════════════════════════════════════════════════ -->
+<section id="nosotros" class="about" aria-labelledby="nosotros-heading">
+  <div class="container">
+
+    <!-- Ghost numeral -->
+    <span class="ghost-num ghost-num--top-right" aria-hidden="true">03</span>
+
+    <!-- Pull quote — leads the section, editorial treatment -->
+    <div class="about__pullquote">
+      <span class="pullquote-mark" aria-hidden="true">&#8220;</span>
+      <blockquote>
+        El mejor seguro no es el más barato ni el más caro.<br>
+        Es el que entiende tu familia.
+      </blockquote>
+      <cite>— Corco Seguros</cite>
+    </div>
+
+    <!-- Abstract lineage SVG — two generations flowing into one -->
+    <div class="about__ambient" aria-hidden="true">
+      <svg viewBox="0 0 480 600" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMaxYMid meet">
+        <!-- Generation 1 — father's path -->
+        <path d="M480 60 C360 60 300 160 280 260 C260 360 240 420 200 500" stroke="rgba(201,169,110,0.1)" stroke-width="1" stroke-linecap="round"/>
+        <!-- Generation 2 — son's path -->
+        <path d="M480 140 C380 140 320 220 290 300 C260 380 240 440 200 500" stroke="rgba(201,169,110,0.07)" stroke-width="0.75" stroke-linecap="round"/>
+        <!-- Convergence dot -->
+        <circle cx="200" cy="500" r="4" fill="rgba(201,169,110,0.25)"/>
+        <circle cx="200" cy="500" r="2" fill="rgba(201,169,110,0.5)"/>
+        <!-- Cross ties — bridges between the paths -->
+        <line x1="390" y1="80" x2="420" y2="120" stroke="rgba(201,169,110,0.06)" stroke-width="0.75"/>
+        <line x1="310" y1="210" x2="330" y2="250" stroke="rgba(201,169,110,0.06)" stroke-width="0.75"/>
+        <line x1="250" y1="360" x2="260" y2="400" stroke="rgba(201,169,110,0.06)" stroke-width="0.75"/>
+        <!-- Start nodes -->
+        <circle cx="480" cy="60"  r="3" fill="none" stroke="rgba(201,169,110,0.2)" stroke-width="0.75"/>
+        <circle cx="480" cy="140" r="3" fill="none" stroke="rgba(201,169,110,0.15)" stroke-width="0.75"/>
+      </svg>
+    </div>
+
+    <!-- Two-column layout -->
+    <div class="about__inner">
+
+      <div class="about__copy">
+        <span class="eyebrow" style="color:var(--gold)">Nuestra historia</span>
+        <h2 class="about__title" id="nosotros-heading">Dos generaciones.<br>Una promesa.</h2>
+
+        <p>Corco Seguros nació de una convicción simple: que el seguro bien explicado cambia vidas.</p>
+
+        <p>Lo que comenzó como el trabajo de un padre se convirtió en la vocación de un hijo. Hoy, llevamos décadas asesorando a familias panameñas — no como una póliza más en una cartera, sino como el asesor que te llama cuando cambia tu situación, que te explica lo que nadie más lee, y que está ahí cuando más lo necesitas.</p>
+
+        <p>No somos una aseguradora. Somos la persona de confianza que te ayuda a elegir bien.</p>
+      </div>
+
+      <div class="about__photo">
+        <img
+          src="assets/founder-placeholder.svg"
+          alt="Fundadores de Corco Seguros"
+          width="300"
+          height="400"
+          loading="lazy"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__main">
+
+      <div class="footer__brand">
+        <img src="assets/logo-placeholder-light.svg" alt="Corco Seguros" width="140" height="24" />
+        <p>Familia. Protección. Confianza.</p>
+        <p>Panama City, Panama</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navegación del pie de página">
+        <span class="footer__col-label">Navegación</span>
+        <a href="#servicios">Servicios</a>
+        <a href="#coberturas">Coberturas</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="footer__contact">
+        <span class="footer__col-label">Contáctanos</span>
+        <a
+          href="https://wa.me/50700000000"
+          class="btn btn-wa"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Escríbenos directo
+        </a>
+        <a href="/privacy" class="footer__privacy">Política de Privacidad</a>
+      </div>
+
+    </div>
+
+    <div class="footer__bar">
+      <p>© 2026 Corco Seguros. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

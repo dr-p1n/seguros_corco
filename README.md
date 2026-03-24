@@ -1,91 +1,121 @@
-# Next.js
+# Corco Seguros — Static Site
 
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
+Static marketing site for Corco Seguros. Built with HTML5 + CSS3 + Vanilla JS. No frameworks, no build step, no dependencies. Deploy-ready on Cloudflare Pages via GitHub.
 
-## 🚀 Features
+---
 
-- **Next.js 15** - Latest version with improved performance and features
-- **React 19** - Latest React version with enhanced capabilities
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+## Deploy to Cloudflare Pages
 
-## 🛠️ Installation
+1. Push this repo to GitHub (or connect the existing repo).
+2. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com) → **Pages** → **Create a project**.
+3. Connect your GitHub account and select the `seguros_corco` repository.
+4. Build settings:
+   - **Framework preset:** None
+   - **Build command:** *(leave empty)*
+   - **Build output directory:** `/` (root)
+5. Click **Save and Deploy**.
 
-1. Install dependencies:
-  ```bash
-  npm install
-  # or
-  yarn install
-  ```
+The `_headers` file is picked up automatically by Cloudflare Pages — no extra configuration needed for security headers.
 
-2. Start the development server:
-  ```bash
-  npm run dev
-  # or
-  yarn dev
-  ```
-3. Open [http://localhost:4028](http://localhost:4028) with your browser to see the result.
+---
 
-## 📁 Project Structure
+## Replacing the WhatsApp Number
+
+Search the project for the placeholder number and replace with Ramon's real number:
 
 ```
-nextjs/
-├── public/             # Static assets
-├── src/
-│   ├── app/            # App router components
-│   │   ├── layout.tsx  # Root layout component
-│   │   └── page.tsx    # Main page component
-│   ├── components/     # Reusable UI components
-│   ├── styles/         # Global styles and Tailwind configuration
-├── next.config.mjs     # Next.js configuration
-├── package.json        # Project dependencies and scripts
-├── postcss.config.js   # PostCSS configuration
-└── tailwind.config.js  # Tailwind CSS configuration
-
+Find:    50700000000
+Replace: 507XXXXXXXX   ← Ramon's actual number, digits only, no spaces or dashes
 ```
 
-## 🧩 Page Editing
+Affected files:
+- `index.html` — every `wa.me/50700000000` link (nav, service cards, otros servicios cards, table CTA, footer)
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+Test all links on mobile after replacing to confirm they open WhatsApp correctly.
 
-## 🎨 Styling
+---
 
-This project uses Tailwind CSS for styling with the following features:
-- Utility-first approach for rapid development
-- Custom theme configuration
-- Responsive design utilities
-- PostCSS and Autoprefixer integration
+## Swapping the Founder Photo
 
-## 📦 Available Scripts
+Replace `assets/founder-placeholder.svg` with a real photo:
 
-- `npm run dev` - Start development server on port 4028
-- `npm run build` - Build the application for production
-- `npm run start` - Start the development server
-- `npm run serve` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-- `npm run lint:fix` - Fix ESLint issues automatically
-- `npm run format` - Format code with Prettier
+1. Export the photo as `.jpg` or `.webp`, recommended size: **600 × 800 px** (3:4 ratio).
+2. Drop the file in `assets/` — e.g. `assets/founder.jpg`.
+3. In `index.html`, find:
+   ```html
+   <img src="assets/founder-placeholder.svg" ...>
+   ```
+   Change to:
+   ```html
+   <img src="assets/founder.jpg" alt="Ramon Corco — Fundador de Corco Seguros" width="600" height="800" loading="lazy" />
+   ```
+4. Delete `founder-placeholder.svg` once confirmed live.
 
-## 📱 Deployment
+---
 
-Build the application for production:
+## Sections Marked [PLACEHOLDER] — What They Need in v2
 
-  ```bash
-  npm run build
-  ```
+### Lead Magnet Card (`#contacto`)
+- Marked: `<!-- LEAD MAGNET PLACEHOLDER — Phase 2 -->`
+- Needs: Title and description of the actual guide (confirm with Ramon).
+- Replace `[GUÍA PLACEHOLDER]` with the real guide name and a one-line teaser.
 
-## 📚 Learn More
+### Intake Form (`#corco-intake-form`)
+- Currently has `preventDefault()` + `console.log` only — form does **not** submit anywhere.
+- Phase 2: wire the Apps Script POST webhook (see section below).
 
-To learn more about Next.js, take a look at the following resources:
+### Comparative Table (`#coberturas`)
+- Marked: `<!-- TABLE PLACEHOLDER v1 — content TBD -->`
+- The 6 placeholder rows need real content confirmed with Ramon in revision 1.
+- Columns: Renovación · Viaje · Catastrófico · Maternidad — these are confirmed.
+- Rows and checkmarks are illustrative; replace before launch.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
+### Logo
+- `assets/logo-placeholder.svg` is a wordmark SVG. Replace with final brand asset when available.
 
-You can check out the [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## 🙏 Acknowledgments
+## Adding the Apps Script POST Webhook (Phase 2)
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by Next.js and React
-- Styled with Tailwind CSS
+1. Deploy your Google Apps Script as a Web App and copy the endpoint URL.
+2. In `js/main.js`, find:
+   ```js
+   // TODO Phase 2: POST to Apps Script webhook
+   console.log('[Corco Seguros] Form submission intercepted...');
+   ```
+3. Replace with:
+   ```js
+   var data = new FormData(form);
+   fetch('YOUR_APPS_SCRIPT_URL', {
+     method: 'POST',
+     body: data
+   })
+   .then(function(res) { return res.json(); })
+   .then(function(json) {
+     console.log('Form submitted:', json);
+     // TODO: show success message to user
+   })
+   .catch(function(err) {
+     console.error('Submission error:', err);
+   });
+   ```
+4. Also remove the `novalidate` attribute from `<form>` in `index.html` and add proper HTML5 validation or client-side validation.
 
-Built with ❤️ on Rocket.new
+---
+
+## File Structure
+
+```
+corco-seguros/
+├── index.html                    ← Full single-page site
+├── styles/
+│   └── main.css                  ← All styles, mobile-first
+├── js/
+│   └── main.js                   ← Hamburger nav, form, smooth scroll
+├── assets/
+│   ├── logo-placeholder.svg      ← Navy + gold wordmark SVG
+│   ├── logo-placeholder-light.svg← Light variant for dark backgrounds
+│   └── founder-placeholder.svg   ← Gray rectangle placeholder
+├── _headers                      ← Cloudflare Pages security headers
+└── README.md
+```
