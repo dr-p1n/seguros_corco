@@ -1,6 +1,8 @@
 /* ============================================================
-   CORCO SEGUROS — main.js
+   CORCO SEGUROS — main.js  v3
    No frameworks. No dependencies.
+   Hamburger nav · Form placeholder · Smooth scroll
+   Scroll progress bar · Intersection Observer reveals
    ============================================================ */
 
 (function () {
@@ -64,5 +66,67 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // ── Nav: transparent → glass on scroll + logo cross-fade ──
+  var mainNav    = document.getElementById('main-nav');
+  var logoLight  = document.querySelector('.nav__logo-light');
+  var logoDark   = document.querySelector('.nav__logo-dark');
+
+  if (mainNav) {
+    function updateNav() {
+      var scrolled = window.scrollY > 24;
+      mainNav.classList.toggle('nav--scrolled', scrolled);
+      // Drive logo opacity via JS (bypasses CSS cache issues)
+      if (logoLight) logoLight.style.opacity = scrolled ? '0' : '1';
+      if (logoDark)  logoDark.style.opacity  = scrolled ? '1' : '0';
+      if (logoDark)  logoDark.style.pointerEvents = scrolled ? 'auto' : 'none';
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav(); // Init on load
+  }
+
+  // ── Scroll progress bar ────────────────────────────────────
+  var progressBar = document.querySelector('.scroll-progress');
+
+  if (progressBar) {
+    function updateProgress() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct.toFixed(2) + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress(); // Init on load
+  }
+
+  // ── Scroll reveal — Intersection Observer ─────────────────
+  var revealEls = document.querySelectorAll('.reveal');
+
+  if (revealEls.length && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target); // animate once
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    );
+
+    revealEls.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    // Fallback: show all immediately (no IntersectionObserver support)
+    revealEls.forEach(function (el) {
+      el.classList.add('in-view');
+    });
+  }
 
 })();
