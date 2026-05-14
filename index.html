@@ -9,6 +9,10 @@
 
   <link rel="canonical" href="https://www.seguroscorco.com/" />
 
+  <link rel="alternate" hreflang="es-PA" href="https://www.seguroscorco.com/" />
+  <link rel="alternate" hreflang="es" href="https://www.seguroscorco.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.seguroscorco.com/" />
+
   <meta property="og:title" content="Correduría de Seguros Boutique en Panamá | Seguros Corco" />
   <meta property="og:description" content="Correduría de seguros boutique en Panamá para familias de alto patrimonio. Vida, salud, auto, viaje y hogar — asesoría dedicada de dos generaciones." />
   <meta property="og:url" content="https://www.seguroscorco.com/" />
@@ -22,6 +26,7 @@
   {
     "@context": "https://schema.org",
     "@type": "InsuranceAgency",
+    "@id": "https://www.seguroscorco.com/#insuranceagency",
     "name": "Seguros Corco",
     "description": "Correduría de seguros boutique en Panamá para familias de alto patrimonio. Vida, salud, auto, viaje y hogar — asesoría dedicada de dos generaciones.",
     "url": "https://www.seguroscorco.com",
@@ -46,7 +51,69 @@
     "knowsLanguage": ["es", "en"],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Coberturas para Familias de Alto Patrimonio"
+      "name": "Coberturas para Familias de Alto Patrimonio",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Seguro de Vida",
+            "description": "Que los tuyos nunca tengan que preocuparse por lo económico. Diseñamos tu cobertura con el cuidado de quien ya conoce tu familia.",
+            "provider": { "@id": "https://www.seguroscorco.com/#insuranceagency" },
+            "areaServed": { "@type": "Country", "name": "Panamá" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Seguro de Salud",
+            "description": "Atención médica sin sorpresas ni letras pequeñas. Te explicamos cada cláusula hasta que no quede ninguna duda.",
+            "provider": { "@id": "https://www.seguroscorco.com/#insuranceagency" },
+            "areaServed": { "@type": "Country", "name": "Panamá" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Seguro de Auto",
+            "description": "Protección al nivel que decides. Básica o todo riesgo — te orientamos sin presiones.",
+            "provider": { "@id": "https://www.seguroscorco.com/#insuranceagency" },
+            "areaServed": { "@type": "Country", "name": "Panamá" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Seguro de Incendio",
+            "description": "Tu hogar o negocio, cubierto ante lo que no se puede prever.",
+            "provider": { "@id": "https://www.seguroscorco.com/#insuranceagency" },
+            "areaServed": { "@type": "Country", "name": "Panamá" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Seguro de Viaje",
+            "description": "Viaja sabiendo que cualquier emergencia tiene respaldo. Cobertura médica, cancelaciones y equipaje.",
+            "provider": { "@id": "https://www.seguroscorco.com/#insuranceagency" },
+            "areaServed": { "@type": "Country", "name": "Panamá" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Seguro de Contenido",
+            "description": "Lo que está dentro tiene valor. Electrodomésticos, mobiliario y equipos, protegidos.",
+            "provider": { "@id": "https://www.seguroscorco.com/#insuranceagency" },
+            "areaServed": { "@type": "Country", "name": "Panamá" }
+          }
+        }
+      ]
     }
   }
   </script>
@@ -81,6 +148,35 @@
         }
       }
     ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.seguroscorco.com/#organization",
+    "name": "Seguros Corco",
+    "legalName": "Corco Seguros",
+    "url": "https://www.seguroscorco.com",
+    "logo": "https://www.seguroscorco.com/assets/logo-placeholder.svg",
+    "description": "Correduría de seguros boutique de carácter familiar, dedicada a familias de alto patrimonio en Panamá. Dos generaciones de asesoría personal.",
+    "slogan": "Familia. Protección. Confianza.",
+    "areaServed": { "@type": "Country", "name": "Panamá" },
+    "knowsLanguage": ["es", "en"],
+    "subOrganization": { "@id": "https://www.seguroscorco.com/#insuranceagency" }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.seguroscorco.com/#website",
+    "url": "https://www.seguroscorco.com/",
+    "name": "Seguros Corco",
+    "inLanguage": "es-PA",
+    "publisher": { "@id": "https://www.seguroscorco.com/#organization" }
   }
   </script>
 </head>
