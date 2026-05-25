@@ -73,8 +73,12 @@
   var logoDark   = document.querySelector('.nav__logo-dark');
 
   if (mainNav) {
+    // Article pages opt into a permanently-scrolled nav by setting
+    // <body data-static-nav="true"> — needed because article pages
+    // have a light background from the top (no dark hero).
+    var staticNav = document.body.dataset.staticNav === 'true';
     function updateNav() {
-      var scrolled = window.scrollY > 24;
+      var scrolled = staticNav || window.scrollY > 24;
       mainNav.classList.toggle('nav--scrolled', scrolled);
       // Drive logo opacity via JS (bypasses CSS cache issues)
       if (logoLight) logoLight.style.opacity = scrolled ? '0' : '1';
