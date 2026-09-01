@@ -1576,6 +1576,17 @@ tbody td:first-child { color: var(--ink); font-weight: 500; }
 /* ══════════════════════════════════════════════════════════════
    SECTION-LEVEL WA CTA — Services & Other Services
 ══════════════════════════════════════════════════════════════ */
+/* ── Rules lifted out of inline style attributes, so the CSP can
+   forbid inline styles entirely ─────────────────────────────── */
+.services .other-grid { margin-top: 1.5rem; }
+
+/* Standalone About page: no hero above it, so it clears the fixed nav */
+.about--page {
+  padding-block: calc(var(--nav-h) + clamp(3.5rem, 8vw, 6rem)) clamp(4.5rem, 9vw, 7rem);
+}
+
+.about .eyebrow { color: var(--accent-ink); }
+
 /* ── Comparativo dentro de la banda oscura de coberturas ────── */
 .services__compare { margin-top: clamp(2.75rem, 5vw, 3.75rem); }
 
