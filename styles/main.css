@@ -702,6 +702,103 @@ header { height: 0; overflow: visible; }
 @media (min-width: 1024px) { .other-grid { grid-template-columns: repeat(4,1fr); } }
 
 /* ══════════════════════════════════════════════════════════════
+   COVERAGE MENU — una sola caja, seis filas
+   La descripción aparece al pasar el cursor; en táctil, siempre
+   visible, porque en un móvil no existe el hover.
+══════════════════════════════════════════════════════════════ */
+.coverage-menu {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.coverage-menu__row {
+  display: grid;
+  grid-template-columns: minmax(0,auto) 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.35rem clamp(1.25rem, 3vw, 2rem);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  transition: background-color 0.28s ease, padding-left 0.28s ease;
+}
+.coverage-menu__row:last-child { border-bottom: none; }
+
+.coverage-menu__name {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2.2vw, 1.18rem);
+  font-weight: 700;
+  color: var(--cream-50);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: color 0.28s ease;
+}
+
+.coverage-menu__desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(250,250,248,0.55);
+}
+
+.coverage-menu__go {
+  font-size: 1.05rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+/* Hover / teclado: la fila se destaca y la flecha entra */
+.coverage-menu__row:hover,
+.coverage-menu__row:focus-visible {
+  background: rgba(222,213,196,0.10);
+  padding-left: calc(clamp(1.25rem, 3vw, 2rem) + 0.4rem);
+  outline: none;
+}
+.coverage-menu__row:hover .coverage-menu__name,
+.coverage-menu__row:focus-visible .coverage-menu__name { color: var(--accent); }
+.coverage-menu__row:hover .coverage-menu__go,
+.coverage-menu__row:focus-visible .coverage-menu__go { opacity: 1; transform: translateX(0); }
+
+.coverage-menu__row:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--accent);
+}
+
+/* Punteros finos (ratón): la descripción se revela al pasar */
+@media (hover: hover) and (pointer: fine) and (min-width: 700px) {
+  .coverage-menu__desc {
+    opacity: 0;
+    transform: translateY(3px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+  .coverage-menu__row:hover .coverage-menu__desc,
+  .coverage-menu__row:focus-visible .coverage-menu__desc {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Táctil y pantallas estrechas: todo visible, sin depender del hover */
+@media (max-width: 699px) {
+  .coverage-menu__row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas: "name go" "desc desc";
+    gap: 0.4rem 1rem;
+  }
+  .coverage-menu__name { grid-area: name; white-space: normal; }
+  .coverage-menu__desc { grid-area: desc; }
+  .coverage-menu__go   { grid-area: go; opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverage-menu__row,
+  .coverage-menu__desc,
+  .coverage-menu__go { transition: none; }
+}
+
+/* ══════════════════════════════════════════════════════════════
    COMPARATIVE TABLE
 ══════════════════════════════════════════════════════════════ */
 .coverage-table { background: var(--cream-50); }
@@ -1604,16 +1701,26 @@ tbody td:first-child { color: var(--ink); font-weight: 500; }
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 21 / 8;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 18%;
   border-radius: var(--r-lg);
   border: 1px solid rgba(255,255,255,0.10);
   margin-bottom: clamp(1.35rem, 3vw, 1.85rem);
 }
 
-@media (max-width: 599px) {
-  .services__compare-photo { aspect-ratio: 3 / 2; }
+/* Desde tablet, el retrato vertical acompaña al encabezado en columna */
+@media (min-width: 860px) {
+  .services__compare {
+    display: grid;
+    grid-template-columns: minmax(0, 300px) 1fr;
+    gap: clamp(1.75rem, 3.5vw, 2.75rem);
+    align-items: start;
+  }
+  .services__compare-photo { margin-bottom: 0; position: sticky; top: calc(var(--nav-h) + 1.5rem); }
+  .services__compare-title { grid-column: 2; margin-top: 0; }
+  .services__compare .coverage-table__wrap { grid-column: 2; }
+  .services__compare .table-footnote { grid-column: 2; }
 }
 
 .services__compare-title {
