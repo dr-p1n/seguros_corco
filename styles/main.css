@@ -1726,32 +1726,6 @@ tbody td:first-child { color: var(--ink); font-weight: 500; }
 /* ── Comparativo dentro de la banda oscura de coberturas ────── */
 .services__compare { margin-top: clamp(2.75rem, 5vw, 3.75rem); }
 
-.services__compare-photo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 18%;
-  border-radius: var(--r-lg);
-  border: 1px solid rgba(255,255,255,0.10);
-  margin-bottom: clamp(1.35rem, 3vw, 1.85rem);
-}
-
-/* Desde tablet, el retrato vertical acompaña al encabezado en columna */
-@media (min-width: 860px) {
-  .services__compare {
-    display: grid;
-    grid-template-columns: minmax(0, 300px) 1fr;
-    gap: clamp(1.75rem, 3.5vw, 2.75rem);
-    align-items: start;
-  }
-  .services__compare-photo { margin-bottom: 0; position: sticky; top: calc(var(--nav-h) + 1.5rem); }
-  .services__compare-title { grid-column: 2; margin-top: 0; }
-  .services__compare .coverage-table__wrap { grid-column: 2; }
-  .services__compare .table-footnote { grid-column: 2; }
-}
-
 .services__compare-title {
   font-family: var(--serif);
   font-size: clamp(1.15rem, 2.6vw, 1.5rem);
