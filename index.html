@@ -19,7 +19,8 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_PA" />
 
-  <link rel="stylesheet" href="styles/main.css?v=21" />
+  <link rel="preload" as="image" href="assets/hero-panama-city.jpg" fetchpriority="high" />
+  <link rel="stylesheet" href="styles/main.css?v=23" />
 
   <!-- JSON-LD Structured Data — for AI search engines & rich results -->
   <script type="application/ld+json">
@@ -354,6 +355,11 @@
     </div>
 
     <div class="services__compare reveal">
+      <img class="services__compare-photo"
+           src="assets/familia-panama.jpg"
+           width="1100" height="733"
+           loading="lazy" decoding="async"
+           alt="Una familia caminando junta al aire libre." />
       <h3 class="services__compare-title">¿Qué cobertura es para ti?</h3>
       <div class="coverage-table__wrap">
         <table role="table" aria-label="Tabla comparativa de coberturas">
