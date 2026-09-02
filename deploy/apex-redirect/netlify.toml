@@ -1,0 +1,12 @@
+# Mismo trabajo que vercel.json, en Netlify.
+# El plan gratuito de Netlify sí permite uso comercial; el Hobby de
+# Vercel no. Para el sitio de una correduría, eso importa.
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.seguroscorco.com/:splat"
+  status = 301
+  force = true

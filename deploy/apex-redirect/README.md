@@ -15,14 +15,36 @@ Un proyecto Vercel cuyo único trabajo es responder **301** a `www`,
 preservando ruta y query. `seguroscorco.com/articulos/x?a=1` →
 `https://www.seguroscorco.com/articulos/x?a=1`.
 
+
+## Antes de elegir proveedor
+
+La carpeta trae `vercel.json` y `netlify.toml`. Sirve cualquiera de los dos,
+pero no son equivalentes en licencia:
+
+| | Plan gratuito | Uso comercial | Cuenta nueva |
+|---|---|---|---|
+| **Netlify** | Starter | **Sí** | Sí (entra con GitHub) |
+| **Vercel** | Hobby | **No** — Hobby es sólo personal | Sí (entra con GitHub) |
+| **Cloudflare** | — | Sí | **No, ya la tienes** |
+
+`seguroscorco.com` es el sitio de un negocio, así que el plan Hobby de Vercel
+queda fuera de sus términos. Netlify gratuito no tiene ese problema.
+
+La tercera vía es mover el DNS del dominio a Cloudflare, donde ya vive el sitio:
+el apex funcionaría de forma nativa, sin proveedor extra ni cuenta nueva. A
+cambio hay que reimportar los registros de correo de Hostinger, y ése es el
+riesgo que este proyecto viene evitando desde el principio.
+
 ## Pasos
 
 1. **Sube esta carpeta a un repositorio propio** (por ejemplo
    `seguros_corco_apex`). No la mezcles con el repo del sitio: ese despliega a
    Cloudflare Pages y este a Vercel.
 
-2. **Importa el repo en Vercel.** Framework Preset: `Other`. Sin build command,
-   sin output directory. El `vercel.json` hace todo.
+2. **Importa el repo.** No hace falta un repo aparte: tanto Netlify como Vercel
+   permiten desplegar desde una subcarpeta. Elige `dr-p1n/seguros_corco` y fija
+   el directorio base en `deploy/apex-redirect`. Sin build command, sin output
+   directory: el archivo de configuración hace todo.
 
 3. **Añade el dominio en Vercel:** Project → Settings → Domains → `seguroscorco.com`.
    Añade **sólo el apex**. No añadas `www` — ese sigue viviendo en Cloudflare
