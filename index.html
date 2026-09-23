@@ -26,7 +26,11 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": ["Organization", "LocalBusiness", "InsuranceAgency"],
+    "@type": [
+      "Organization",
+      "LocalBusiness",
+      "InsuranceAgency"
+    ],
     "@id": "https://www.seguroscorco.com/#organization",
     "name": "Seguros Corco",
     "legalName": "Corco Seguros",
@@ -84,7 +88,9 @@
             "areaServed": {
               "@type": "Country",
               "name": "Panamá"
-            }
+            },
+            "@id": "https://www.seguroscorco.com/coberturas/vida#service",
+            "url": "https://www.seguroscorco.com/coberturas/vida"
           }
         },
         {
@@ -99,7 +105,9 @@
             "areaServed": {
               "@type": "Country",
               "name": "Panamá"
-            }
+            },
+            "@id": "https://www.seguroscorco.com/coberturas/salud#service",
+            "url": "https://www.seguroscorco.com/coberturas/salud"
           }
         },
         {
@@ -114,7 +122,9 @@
             "areaServed": {
               "@type": "Country",
               "name": "Panamá"
-            }
+            },
+            "@id": "https://www.seguroscorco.com/coberturas/auto#service",
+            "url": "https://www.seguroscorco.com/coberturas/auto"
           }
         },
         {
@@ -129,7 +139,9 @@
             "areaServed": {
               "@type": "Country",
               "name": "Panamá"
-            }
+            },
+            "@id": "https://www.seguroscorco.com/coberturas/incendio#service",
+            "url": "https://www.seguroscorco.com/coberturas/incendio"
           }
         },
         {
@@ -144,7 +156,9 @@
             "areaServed": {
               "@type": "Country",
               "name": "Panamá"
-            }
+            },
+            "@id": "https://www.seguroscorco.com/coberturas/viaje#service",
+            "url": "https://www.seguroscorco.com/coberturas/viaje"
           }
         },
         {
@@ -159,14 +173,48 @@
             "areaServed": {
               "@type": "Country",
               "name": "Panamá"
-            }
+            },
+            "@id": "https://www.seguroscorco.com/coberturas/contenido#service",
+            "url": "https://www.seguroscorco.com/coberturas/contenido"
           }
         }
       ]
     },
     "employee": {
       "@id": "https://www.seguroscorco.com/#ramon-corco"
-    }
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+507-6070-3513",
+        "contactType": "sales",
+        "areaServed": "PA",
+        "availableLanguage": [
+          {
+            "@type": "Language",
+            "name": "Español",
+            "alternateName": "es"
+          },
+          {
+            "@type": "Language",
+            "name": "Inglés",
+            "alternateName": "en"
+          }
+        ],
+        "url": "https://wa.me/50760703513"
+      }
+    ],
+    "knowsAbout": [
+      "Seguro de vida",
+      "Seguro de salud",
+      "Seguro de auto",
+      "Seguro de incendio",
+      "Seguro de viaje",
+      "Seguro de contenido",
+      "Seguros patrimoniales",
+      "Seguros para empresas en Panamá",
+      "Correduría de seguros"
+    ]
   }
   </script>
 
@@ -206,6 +254,131 @@
     "publisher": {
       "@id": "https://www.seguroscorco.com/#organization"
     }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.seguroscorco.com/#webpage",
+    "url": "https://www.seguroscorco.com/",
+    "name": "Correduría de Seguros Boutique en Panamá | Seguros Corco",
+    "isPartOf": {
+      "@id": "https://www.seguroscorco.com/#website"
+    },
+    "about": {
+      "@id": "https://www.seguroscorco.com/#organization"
+    },
+    "inLanguage": "es-PA",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.seguroscorco.com/assets/hero-panama-city.jpg",
+      "caption": "Ciudad de Panamá"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": "https://www.seguroscorco.com/#guias",
+    "name": "Guías de Seguros Corco",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://www.seguroscorco.com/articulos/coberturas-familias-alto-patrimonio",
+        "item": {
+          "@type": "Article",
+          "@id": "https://www.seguroscorco.com/articulos/coberturas-familias-alto-patrimonio",
+          "headline": "Las 7 coberturas que toda familia de alto patrimonio en Panamá debe tener activas",
+          "url": "https://www.seguroscorco.com/articulos/coberturas-familias-alto-patrimonio",
+          "author": {
+            "@id": "https://www.seguroscorco.com/#organization"
+          },
+          "inLanguage": "es-PA"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://www.seguroscorco.com/articulos/coberturas-negocio-panama",
+        "item": {
+          "@type": "Article",
+          "@id": "https://www.seguroscorco.com/articulos/coberturas-negocio-panama",
+          "headline": "Las 5 coberturas que todo negocio en Panamá debe revisar antes de firmar un contrato",
+          "url": "https://www.seguroscorco.com/articulos/coberturas-negocio-panama",
+          "author": {
+            "@id": "https://www.seguroscorco.com/#organization"
+          },
+          "inLanguage": "es-PA"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://www.seguroscorco.com/articulos/correduria-boutique-vs-banco",
+        "item": {
+          "@type": "Article",
+          "@id": "https://www.seguroscorco.com/articulos/correduria-boutique-vs-banco",
+          "headline": "¿Por qué una correduría boutique hace la diferencia frente a un banco o aseguradora directa?",
+          "url": "https://www.seguroscorco.com/articulos/correduria-boutique-vs-banco",
+          "author": {
+            "@id": "https://www.seguroscorco.com/#organization"
+          },
+          "inLanguage": "es-PA"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://www.seguroscorco.com/articulos/negocio-asegurado-realmente",
+        "item": {
+          "@type": "Article",
+          "@id": "https://www.seguroscorco.com/articulos/negocio-asegurado-realmente",
+          "headline": "¿Tu negocio está asegurado, o solo crees que lo está?",
+          "url": "https://www.seguroscorco.com/articulos/negocio-asegurado-realmente",
+          "author": {
+            "@id": "https://www.seguroscorco.com/#organization"
+          },
+          "inLanguage": "es-PA"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://www.seguroscorco.com/articulos/seguro-patrimonial-panama",
+        "item": {
+          "@type": "Article",
+          "@id": "https://www.seguroscorco.com/articulos/seguro-patrimonial-panama",
+          "headline": "Seguro patrimonial en Panamá: lo que cubre (y lo que asumes que cubre, pero no)",
+          "url": "https://www.seguroscorco.com/articulos/seguro-patrimonial-panama",
+          "author": {
+            "@id": "https://www.seguroscorco.com/#organization"
+          },
+          "inLanguage": "es-PA"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://www.seguroscorco.com/articulos/seguro-salud-panama",
+        "item": {
+          "@type": "Article",
+          "@id": "https://www.seguroscorco.com/articulos/seguro-salud-panama",
+          "headline": "Seguro de salud en Panamá: lo que toda familia de alto patrimonio debe exigir",
+          "url": "https://www.seguroscorco.com/articulos/seguro-salud-panama",
+          "author": {
+            "@id": "https://www.seguroscorco.com/#organization"
+          },
+          "inLanguage": "es-PA"
+        }
+      }
+    ]
   }
   </script>
 </head>
