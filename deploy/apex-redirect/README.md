@@ -1,7 +1,12 @@
 # Redirección del apex — seguroscorco.com → www.seguroscorco.com
 
-Hoy `seguroscorco.com` (sin www) devuelve **NXDOMAIN**: no resuelve. Quien lo
-escriba a mano, o llegue desde la ficha de Google Business, no ve nada.
+Hoy `seguroscorco.com` (sin www) no lleva a ninguna parte. Quien lo escriba a
+mano, o llegue desde la ficha de Google Business, no ve nada.
+
+Precisión, porque una versión anterior de este documento se equivocaba: el apex
+**no** devuelve NXDOMAIN, devuelve **NOERROR / NODATA**. La zona existe y es
+autoritativa en Hostinger — sirve MX y TXT correctamente. Lo único que le falta
+es un registro A.
 
 Cloudflare Pages no puede tomar el apex porque exige controlar la zona DNS
 completa, y mover el DNS a Cloudflare significaría reimportar los registros de
@@ -64,16 +69,20 @@ riesgo que este proyecto viene evitando desde el principio.
    de ellos:
 
    - `MX` @ → mx1.hostinger.com / mx2.hostinger.com
-   - `TXT` @ → `v=spf1 include:_spf.mail.hostinger.com ~all`
    - `TXT` @ → `google-site-verification=…` (verificación de Google)
    - `TXT` _dmarc
    - `CNAME` hostingermail-a/b/c._domainkey (DKIM)
    - `CNAME` autodiscover / autoconfig
    - `CNAME` www → seguros-corco-17i.pages.dev
 
-   En particular: **nunca añadas un segundo registro TXT que empiece con
-   `v=spf1`**. Dos SPF en el mismo nombre invalidan el SPF y el correo empieza
-   a caer en spam.
+   ⚠️ **Ojo:** este listado incluía un registro SPF (`v=spf1 include:_spf.mail.hostinger.com ~all`)
+   como si ya existiera. **No existe** — verificado el 2026-09-23 contra 1.1.1.1,
+   8.8.8.8 y 9.9.9.9. Hay que añadirlo, y tiene su propio procedimiento en
+   [`../dns-spf-y-apex.md`](../dns-spf-y-apex.md). No lo des por hecho.
+
+   Cuando lo añadas: **nunca puede haber dos registros TXT que empiecen con
+   `v=spf1`** en el mismo nombre. Dos SPF invalidan el SPF entero y el correo
+   empieza a caer en spam.
 
 ## Verificación
 
